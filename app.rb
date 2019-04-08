@@ -7,10 +7,13 @@ class App < Sinatra::Base
   end
   
   post '/team' do
-    params.each do |k, v| 
-      binding.pry
-      send("@#{k} =", v)
-    end
+    @team_name = params[:team_name]
+    @coach = params[:coach]
+    @point_guard = params[:point_guard]
+    @shooting_guard = params[:shooting_guard]
+    @small_forward = params[:small_forward]
+    @power_forward = params[:power_forward]
+    @center = params[:center]
     erb :team
   end
 
