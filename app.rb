@@ -9,7 +9,7 @@ class App < Sinatra::Base
   post '/team' do
     params.each do |k, v| 
       binding.pry
-      send("@#{k}=", v)
+      send("@#{k} =", v)
     end
     erb :team
   end
