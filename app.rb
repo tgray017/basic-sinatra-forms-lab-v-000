@@ -7,7 +7,10 @@ class App < Sinatra::Base
   end
   
   post '/team' do
-    params.each {|k, v| send("@#{k}=", v)}
+    params.each do |k, v| 
+      binding.pry
+      send("@#{k}=", v)
+    end
     erb :team
   end
 
